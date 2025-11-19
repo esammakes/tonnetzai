@@ -9,21 +9,16 @@
     {
       "matches": ["https://www.youtube.com/watch*"],
       "js": ["content.js"],
-      "css": ["inject.css"]
+      "css": ["inject.css"],
+      "run_at": "document_idle"
     }
   ],
   "action": {
     "default_title": "Tonnetz"
   },
-  "background": { "service-worker": "service-worker.js" },
-  "content_scripts": [
-    {
-      "matches": ["https://www.youtube.com/*"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
-    }
-  ],
-
+  "background": { 
+    "service_worker": "service-worker.js" 
+  },
   "web_accessible_resources": [
     {
       "resources": ["panel.css"],

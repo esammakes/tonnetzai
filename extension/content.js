@@ -1,6 +1,6 @@
 // after the extension is clicked and it's a Youtube watch page = valid
 // we'll make the service-worker.js trigger content.js here
-// we'll also use Shadow DOM styles
+// we'll also use Shadow DOM styles ??
 
 // content.js will wait for toggle message from service-worker
 // if on watch page --> create panel; if already there, remote it
