@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Tonnetz Chords for YouTube",
+  "version": "0.1.0",
+  "description": "Injects a floating Tonnetz panel on YouTube watch pages that plays chords in real time with Youtube videos.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "css": ["inject.css"]
+    }
+  ],
+  "action": {
+    "default_title": "Tonnetz"
+  },
+  "background": { "service-worker": "service-worker.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["panel.css"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}
